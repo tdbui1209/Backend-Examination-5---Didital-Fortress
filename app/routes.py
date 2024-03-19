@@ -7,12 +7,14 @@ from app.models import Room
 def light_setup():
     from app.light_utils import find_light_setups
     data = request.get_json()
-    light_brightness_list = data.get('light_brightness_list', None)
-    expected_brightness = data.get('expected_brightness', None)
-    if not light_brightness_list:
-        return jsonify({"error": "light_brightness is required"}), 400
-    if not expected_brightness:
-        return jsonify({"error": "expected_brightness is required"}), 400
+    try:
+        light_brightness_list = data['light_brightness_list']
+    except KeyError:
+        return jsonify({'error': 'light_brightness_list is required'}), 400
+    try:
+        expected_brightness = data['expected_brightness']
+    except KeyError:
+        return jsonify({'error': 'expected_brightness is required'}), 400
     result = []
     find_light_setups(light_brightness_list, expected_brightness, [], 0, result)
     
