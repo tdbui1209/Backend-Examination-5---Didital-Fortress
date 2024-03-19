@@ -1,0 +1,6 @@
+host: "a1089xdb9qnyqp-ats.iot.ap-southeast-1.amazonaws.com"
+port: 8883
+topic: "back-end-exam"
+certificate: "certificate.crt"
+private_key: "private_key.key"
+root_ca: "root_ca.pem"
