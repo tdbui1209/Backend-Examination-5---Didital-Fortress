@@ -7,7 +7,7 @@ This project aims to develop a website for managing the light in the user's room
 ![db_diagram](https://github.com/tdbui1209/Backend-Examination-5---Didital-Fortress/assets/72682397/c01b88e5-279e-42a3-ba74-e80a55c835c9)
 
 ## Project structure
-│
+```
 ├── app/
 │   ├── __init__.py
 │   ├── app.py
@@ -24,6 +24,7 @@ This project aims to develop a website for managing the light in the user's room
 ├── mqtt_config.yml
 ├── requirements.txt
 └── run.py
+```
 
 ## How to use
 Step 1:
