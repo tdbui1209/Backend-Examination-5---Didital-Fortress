@@ -24,9 +24,10 @@ class Light(db.Model):
     light_id = db.Column(db.Integer, primary_key=True)
     room_id = db.Column(db.Integer, db.ForeignKey('room.room_id'), nullable=False)
     light_name = db.Column(db.String(100), nullable=False)
-    color_id = db.Column(db.String(10))
+    color_id = db.Column(db.String(10), db.ForeignKey('color.color_id'), nullable=False)
     brightness = db.Column(db.Integer)
     status = db.Column(db.Enum('on', 'off'), default='off')
+    history = db.relationship('History', backref='light', lazy=True)
 
 class History(db.Model):
     history_id = db.Column(db.Integer, primary_key=True)
