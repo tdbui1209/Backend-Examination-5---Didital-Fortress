@@ -20,5 +20,10 @@ EXPOSE 5000
 ENV FLASK_APP run.py
 ENV DATABASE_URL sqlite:///light_db.db
 
+# Migration
+RUN flask db init
+RUN flask db migrate
+RUN flask db upgrade
+
 # Run app.py when the container launches
-CMD ["flask", "run", "--host=0.0.0.0"]
+RUN flask run --host=0.0.0.0
